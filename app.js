@@ -20,6 +20,9 @@ app.get('/chatbot/public/bot.png' ,(req,res)=>{
 app.get('/chatbot/botui/js/index.js' ,(req,res)=>{
   res.sendFile('/chatbot/botui/js/index.js');
 })
+app.get('/chatbot/botui/index.html' ,(req,res)=>{
+  res.sendFile('/chatbot/botui/index.html');
+})
 
 app.use(bodyParser.urlencoded({
 extended:false  //req.body obj will contain string or array
