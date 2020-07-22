@@ -9,7 +9,10 @@ const sessionId=uuid.v4();
 
 
 //app.use(express.static("public"))
-
+app.get('/', function (req, res) {
+  const index = path.join(__dirname, 'botui', 'index.html');
+  res.sendFile(index);
+});
 
 app.get('/chatbot/public/css/style.css' ,(req,res)=>{
   res.sendFile('/chatbot/public/css/style.css');
