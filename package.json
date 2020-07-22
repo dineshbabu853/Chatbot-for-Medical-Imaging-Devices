@@ -2,6 +2,10 @@
   "name": "botjs",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": ">= 6.9.4",
+    "npm": ">= 4.4.0"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
