@@ -13,7 +13,10 @@ app.get('/', function (req, res) {
   const index = path.join(__dirname, 'botui', 'index.html');
   res.sendFile(index);
 });
-
+app.get('/chatbot/public/css/style.css', function (req, res) {
+  const index = path.join(__dirname, 'public', 'style.css');
+  res.sendFile(index);
+});
 app.get('/chatbot/public/css/style.css' ,(req,res)=>{
   res.sendFile('/chatbot/public/css/style.css');
 })
