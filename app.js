@@ -58,7 +58,7 @@ async function runSample(msg,projectId = 'test-agent-nocirr') {
   const sessionId = uuid.v4();
 
   const sessionClient = new dialogflow.SessionsClient({
-    keyFilename:"C:/chatbot/test-agent-10307ca3f713.json"
+    keyFilename:"test-agent-10307ca3f713.json"
   });
   const sessionPath = sessionClient.sessionPath(projectId, sessionId);
 
