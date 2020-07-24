@@ -9,17 +9,25 @@ const sessionId=uuid.v4();
 
 
 //app.use(express.static("public"))
+
 app.get('/', function (req, res) {
   const index = path.join(__dirname, 'botui', 'index.html');
   res.sendFile(index);
 });
+/*
+app.get('/',(req,res)=>{
+  res.sendFile('/chatbot/botui/index.html');
+})
+*/
 app.get('/chatbot/public/css/style.css', function (req, res) {
-  const index = path.join(__dirname, 'public', 'style.css');
+  const index = path.join(__dirname, 'public', '/css/style.css');
   res.sendFile(index);
 });
+/*
 app.get('/chatbot/public/css/style.css' ,(req,res)=>{
   res.sendFile('/chatbot/public/css/style.css');
 })
+*/
 app.get('/chatbot/public/bot.png' ,(req,res)=>{
   res.sendFile('/chatbot/public/bot.png');
 })
@@ -86,9 +94,6 @@ return result.fulfillmentText;
 
 }
 
-app.get('/',(req,res)=>{
-  res.sendFile('/chatbot/botui/index.html');
-})
 
 app.post('/',(req,res)=>{
   runSample(req.body.MSG).then(data=>{
