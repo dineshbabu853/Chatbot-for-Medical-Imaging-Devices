@@ -14,29 +14,21 @@ app.get('/', function (req, res) {
   const index = path.join(__dirname, 'botui', 'index.html');
   res.sendFile(index);
 });
-/*
-app.get('/',(req,res)=>{
-  res.sendFile('/chatbot/botui/index.html');
-})
-*/
+
 app.get('/chatbot/public/css/style.css', function (req, res) {
   const index = path.join(__dirname, 'public', '/css/style.css');
   res.sendFile(index);
 });
-/*
-app.get('/chatbot/public/css/style.css' ,(req,res)=>{
-  res.sendFile('/chatbot/public/css/style.css');
-})
-*/
-app.get('/chatbot/public/bot.png' ,(req,res)=>{
-  res.sendFile('/chatbot/public/bot.png');
-})
-app.get('/chatbot/botui/js/index.js' ,(req,res)=>{
-  res.sendFile('/chatbot/botui/js/index.js');
-})
-app.get('/chatbot/botui/index.html' ,(req,res)=>{
-  res.sendFile('/chatbot/botui/index.html');
-})
+
+app.get('/chatbot/public/bot.png', function (req, res) {
+  const index = path.join(__dirname, 'public', 'bot.png');
+  res.sendFile(index);
+});
+
+app.get('/chatbot/botui/js/index.js', function (req, res) {
+  const index = path.join(__dirname, 'botui', '/js/index.js');
+  res.sendFile(index);
+});
 
 app.use(bodyParser.urlencoded({
 extended:false  //req.body obj will contain string or array
