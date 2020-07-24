@@ -9,6 +9,10 @@ const sessionId=uuid.v4();
 
 
 //app.use(express.static("public"))
+app.get('/chatbot/botui/js/index.js', function (req, res) {
+  const index = path.join(__dirname, 'botui', '/js/index.js');
+  res.sendFile(index);
+});
 
 app.get('/', function (req, res) {
   const index = path.join(__dirname, 'botui', 'index.html');
@@ -25,10 +29,6 @@ app.get('/chatbot/public/bot.png', function (req, res) {
   res.sendFile(index);
 });
 
-app.get('/chatbot/botui/js/index.js', function (req, res) {
-  const index = path.join(__dirname, 'botui', '/js/index.js');
-  res.sendFile(index);
-});
 
 app.use(bodyParser.urlencoded({
 extended:false  //req.body obj will contain string or array
