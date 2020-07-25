@@ -14,6 +14,11 @@ app.get('/chatbot/botui/js/index.js', function (req, res) {
   res.sendFile(index);
 });
 
+app.get('/favicon.ico', function (req, res) {
+  const index = path.join(__dirname, 'botui', 'favicon.ico');
+  res.sendFile(index);
+});
+
 app.get('/', function (req, res) {
   const index = path.join(__dirname, 'botui', 'index.html');
   res.sendFile(index);
