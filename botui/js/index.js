@@ -18,19 +18,12 @@ recognition.onresult = (event) => {
   const speechToText = event.results[0][0].transcript;
   document.getElementById("MSG").value= speechToText;
   //console.log(speechToText)
-  insertMessage()
-}
-
-
-function listendom(no){
-  console.log(no)
-  //console.log(document.getElementById(no))
-document.getElementById("MSG").value= no.innerHTML;
   insertMessage();
 }
 
+
 $(window).load(function() {
-  $messages.mCustomScrollbar();
+  $('.messages').mCustomScrollbar();
   setTimeout(function() {
     serverMessage("Hi there,Im your virtual assistant");
   }, 100);
@@ -38,7 +31,7 @@ $(window).load(function() {
 });
 
 function updateScrollbar() {
-  $messages.mCustomScrollbar("update").mCustomScrollbar('scrollTo', 'bottom', {
+  $('.messages').mCustomScrollbar("update").mCustomScrollbar('scrollTo', 'bottom', {
     scrollInertia: 10,
     timeout: 0
   });
@@ -47,7 +40,7 @@ function updateScrollbar() {
 
 
 function insertMessage() {
-  msg = $('.message-input').val();
+   msg = $('.message-input').val();
   if ($.trim(msg) == '') {
     return false;
   }
@@ -62,8 +55,6 @@ function insertMessage() {
 document.getElementById("mymsg").onsubmit = (e)=>{
   e.preventDefault() 
   insertMessage();
-
-
 }
 
 function serverMessage(response2) {
@@ -76,7 +67,7 @@ function serverMessage(response2) {
   updateScrollbar();
   
 
-  setTimeout(function() {
+  setTimeout( function() {
     $('.message.loading').remove();
     $('<div class="message new"><figure class="avatar"><img src="/chatbot/public/bot.png" /></figure>' + response2 + '</div>').appendTo($('.mCSB_container')).addClass('new');
     updateScrollbar();
