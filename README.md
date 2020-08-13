@@ -2,4 +2,8 @@ A chatbot designed as Web application for medical imaging devices created using 
 and responding with queries using Natural Language Processing.      
 It guides technologist's in operating the medical imaging devices. Handles Multiple requests simultaneously and highly Scalable   
 Selected for Smart India Hackathon 2020 Grand Fianale.   
+Tech stack :  
+Frontend - HTML/CSS/JS  
+Backend - Node JS,Express Js  
+DialogFlow - For Processing user queries using NLP.  
 The app is live at : https://virtual-assistant-v1.herokuapp.com  
